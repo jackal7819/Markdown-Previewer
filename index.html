@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Markdown Previewer">
+    <link rel="shortcut icon" href="favicon.png" type="image/png">
+    <link rel="stylesheet" href="styles.css">
+    <title>Markdown Previewer</title>
+</head>
+<body>
+    <main>
+        <h1 class="title">Markdown Previewer</h1>
+        <div class="container" x-data="{markdown: defaultText}">
+            <div class="box">
+                <h2>Edit</h2>
+                <textarea id="editor" x-model="markdown"></textarea>
+            </div>
+            <div class="box">
+                <h2>Previewer</h2>
+                <div class="preview" id="preview" x-html="marked.parse(markdown)"></div>
+            </div>
+        </div>
+    </main>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/marked/4.2.12/marked.min.js" integrity="sha512-uwSxMaa/W7dmSIXEd07BMVymisMRRUS/Pr5a76AquekKKu9HWn4rBiCd+ZtwqnoijAJvttdrz8krzP26kZjg0Q==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
